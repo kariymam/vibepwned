@@ -37,7 +37,6 @@ const addCategoriesStringsToEntries = (entries) => {
     .sort((curr, next) => {
       let currDT = new Date(curr.data.datetime).toISOString();
       let nextDT = new Date(next.data.datetime).toISOString();
-      console.log(currDT, nextDT);
       return currDT > nextDT ? 1 : -1;
     })
     .reverse();
