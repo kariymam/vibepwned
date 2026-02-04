@@ -6,7 +6,7 @@ name: Deploy GH Pages
 on:
   # trigger when something is pushed to the branch main
   push: 
-    branches: [ "main" ]
+    branches: [ "gh-actions" ]
   # make it possible to trigger manually, useful for debugging
   workflow_dispatch: 
 
@@ -33,4 +33,4 @@ jobs:
         with:
           # this line is needed for the action to be able to push something to your repository
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./docs
