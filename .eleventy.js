@@ -1,3 +1,4 @@
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const pluginSass = require('eleventy-sass');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
@@ -8,6 +9,7 @@ module.exports = function (eleventyConfig) {
     input: './src/css/*.sass',
     output: './_site/css',
   });
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addWatchTarget('./src/entries/*.md');
   eleventyConfig.addPassthroughCopy('src/css/*.css');
   eleventyConfig.addPassthroughCopy('src/js');
@@ -17,5 +19,6 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: 'src',
     },
+    pathPrefix: "/vibepwned/",
   };
 };
